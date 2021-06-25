@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Admin"
+    android:padding="90dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lay_spacer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_paie_interet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PAIMENT DES INTÉRÊTS"></Button>
+
+        <Button
+            android:id="@+id/btn_cpt_cheque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMPTES CHÈQUES"></Button>
+
+        <Button
+            android:id="@+id/btn_cpt_saving"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMPTES ÉPARGNES"></Button>
+
+        <Button
+            android:id="@+id/btn_liste_client"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LISTE DES CLIENTS"></Button>
+    </LinearLayout>
+
+
+
+</LinearLayout>
