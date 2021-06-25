@@ -25,6 +25,11 @@ public class Guichet {
        }
         return false;
     }
+    protected ArrayList<Compte> passeCompte(String username, int nip){
+        ArrayList<Compte> passeur=new ArrayList<Compte>();
+        passeur= Objects.requireNonNull(this.arbre_client.get(username)).comptes_client;
+        return passeur;
+    }
    protected void ajouterClient(Client client){
         this.arbre_client.put(client.getUsername(), client);
     }

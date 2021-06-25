@@ -15,12 +15,16 @@ public class Client {
         this.username=username;
         this.admin=admin;
     }
-    Client(String nom,  String prenom, String username, boolean admin, Compte ck){
+    Client(String nom,  String prenom, String username, boolean admin, Epargne ck){
+        this(nom, prenom, username, admin);
+        ajouterCompte(ck);
+    }
+    Client(String nom,  String prenom, String username, boolean admin, Cheque ck){
         this(nom, prenom, username, admin);
         ajouterCompte(ck);
     }
 
-    Client(String nom,  String prenom, String username, boolean admin, Compte ck,Compte ep){
+    Client(String nom,  String prenom, String username, boolean admin, Cheque ck,Epargne ep){
         this(nom, prenom, username, admin);
         this.comptes_client.add(ck);
         this.comptes_client.add(ep);
@@ -41,5 +45,8 @@ public class Client {
             }
         }
         return false;
+    }
+    protected ArrayList<Compte> getComptes(){
+        return this.comptes_client;
     }
 }

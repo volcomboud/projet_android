@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main_user"
     android:orientation="vertical"
-    android:padding="25dp">
+    android:padding="25dp"
+    tools:context=".main_user">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"></LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -20,118 +21,159 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:gravity="center"
             android:text="Bonjour Android ATM"
-            android:textSize="16sp"
-            android:gravity="center"></TextView>
+            android:textSize="16sp"></TextView>
 
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="LOGOUT"
-            android:onClick="OnClickLogOut"></Button>
+            android:onClick="OnClickLogOut"
+            android:text="LOGOUT"></Button>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btn_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="OnClickBtn0"
             android:text="0"></Button>
+
         <Button
+            android:id="@+id/btn_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="1"
-            android:layout_marginLeft="5dp"></Button>
+            android:onClick="OnClickBtn1"
+            android:text="1"></Button>
+
         <Button
+            android:id="@+id/btn_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="2"
-            android:layout_marginLeft="5dp"></Button>
+            android:onClick="OnClickBtn2"
+            android:text="2"></Button>
+
         <Button
+            android:id="@+id/btn_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="3"
-            android:layout_marginLeft="5dp"></Button>
+            android:onClick="OnClickBtn3"
+            android:text="3"></Button>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btn_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="OnClickBtn4"
             android:text="4"></Button>
+
         <Button
+            android:id="@+id/btn_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="5"
-            android:layout_marginLeft="5dp"></Button>
+            android:onClick="OnClickBtn5"
+            android:text="5"></Button>
+
         <Button
+            android:id="@+id/btn_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="6"
-            android:layout_marginLeft="5dp"></Button>
+            android:onClick="OnClickBtn6"
+            android:text="6"></Button>
+
         <Button
+            android:id="@+id/btn_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:text="7"
-            android:layout_marginLeft="5dp"></Button>
+            android:onClick="OnClickBtn7"
+            android:text="7"></Button>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btn_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="OnClickBtn8"
             android:text="8"></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="9"
-            android:layout_marginLeft="5dp"></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="."
-            android:layout_marginLeft="5dp"></Button>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="c"
-            android:layout_marginLeft="5dp"></Button>
-    </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-    <EditText
+        <Button
+            android:id="@+id/btn_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:onClick="OnClickBtn9"
+            android:text="9"></Button>
+
+        <Button
+            android:id="@+id/btn_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:onClick="OnClickBtnPoint"
+            android:text="."></Button>
+
+        <Button
+            android:id="@+id/btn_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:onClick="OnClickBtnC"
+            android:text="c"></Button>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Le montant apparaîtra ici"></EditText>
-</LinearLayout>
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txtb_aff_montant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="Le montant apparaîtra ici"></EditText>
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="horizontal">
 
         <RadioGroup
+            android:id="@+id/radioG_operation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -139,31 +181,44 @@
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Dépot"
-                android:layout_weight="1"></RadioButton>
+                android:layout_weight="1"
+                android:onClick="OnClickDepot"
+                android:text="Dépot"></RadioButton>
+
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Retrait"
-                android:layout_weight="1"></RadioButton>
+                android:layout_weight="1"
+                android:onClick="OnClickRetrait"
+                android:text="Retrait"></RadioButton>
+
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Virement"
-                android:layout_weight="1"></RadioButton>
+                android:layout_weight="1"
+                android:onClick="OnClickVirement"
+                android:text="Virement"></RadioButton>
         </RadioGroup>
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
             <RadioButton
+                android:id="@+id/radio_cheque"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="OnClickCheque"
                 android:text="Chèque"></RadioButton>
+
             <RadioButton
+                android:id="@+id/radio_epargne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="OnClickEpargne"
                 android:text="Épargne"></RadioButton>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -171,23 +226,27 @@
         </RadioGroup>
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:text="ÉTAT DES COMPTES"
+            android:layout_marginRight="2.5dp"
             android:layout_weight="1"
-            android:layout_marginRight="2.5dp"></Button>
+            android:text="ÉTAT DES COMPTES"></Button>
+
         <Button
+            android:id="@+id/btn_soumettre"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:text="SOUMETTRE"
-            android:layout_weight="1"
             android:layout_gravity="center"
-            android:layout_marginLeft="2.5dp"></Button>
+            android:layout_marginLeft="2.5dp"
+            android:layout_weight="1"
+            android:text="SOUMETTRE"></Button>
     </LinearLayout>
 
 </LinearLayout>
