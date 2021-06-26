@@ -25,13 +25,13 @@ public abstract class Compte implements Parcelable {
         this.num_compte=compteur_num_compte;
         Compte.compteur_num_compte++;
     }
-    private void conversionDollars(){
-        while(solde_cents>100){
+    protected void conversionDollars(){
+        while(solde_cents>=100){
             this.solde_cents-=100;
             this.solde_dollar+=1;
         }
     }
-    private int convertionCents(){
+    protected int convertionCents(){
         int tampon=this.solde_dollar;
         if(solde_dollar>0)tampon*=100;
         return tampon+=solde_cents;
@@ -42,7 +42,7 @@ public abstract class Compte implements Parcelable {
             tampon += user_cents;
             this.solde_dollar=0;
             this.solde_cents=tampon;
-            conversionDollarsPlusPlus();
+            conversionDollars();
     }
     protected void retrait(int user_dollars,int user_cents){
         int tampon=convertionCents();
@@ -51,18 +51,18 @@ public abstract class Compte implements Parcelable {
             tampon -= user_cents;
             this.solde_dollar=0;
             this.solde_cents=tampon;
-            conversionDollarsPlusPlus();
+            conversionDollars();
         }
     }
-    protected void conversionDollarsPlusPlus(){
-        System.out.println("AVANT CONVERSION);"+solde_cents);
-
-        while(solde_cents>=100){
-            this.solde_cents-=100;
-            this.solde_dollar+=1;
-        }
-
-    }
+//    protected void conversionDollarsPlusPlus(){
+//        System.out.println("AVANT CONVERSION);"+solde_cents);
+//
+//        while(solde_cents>=100){
+//            this.solde_cents-=100;
+//            this.solde_dollar+=1;
+//        }
+//
+//    }
     protected void afficherSolde(){
         if(solde_cents>9)System.out.println("Le solde : "+this.solde_dollar+","+this.solde_cents);
         else

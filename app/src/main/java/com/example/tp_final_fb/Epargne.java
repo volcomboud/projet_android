@@ -11,13 +11,12 @@ public class Epargne extends Compte {
         this.type_epargne=true;
     }
 
-    void  paiementInterets(){
-        this.solde_dollar*=taux_interet;
-        this.solde_cents*=taux_interet;
-        while(solde_cents>100){
-            this.solde_cents-=100;
-            this.solde_dollar+=1;
-        }
+     protected void paiementInterets(){
+        int tampon=convertionCents();
+        tampon*=taux_interet;
+        this.solde_dollar=0;
+        this.solde_cents=tampon;
+        conversionDollars();
     }
     protected Epargne(Parcel in) {
         num_nip = in.readInt();

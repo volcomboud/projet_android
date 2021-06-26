@@ -3,6 +3,7 @@ package com.example.tp_final_fb;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -22,5 +23,16 @@ public class Admin extends AppCompatActivity {
         if(!cpt_cheque.isEmpty())System.out.println(cpt_cheque.get(0).num_compte);
         if(!cpt_epargne.isEmpty())System.out.println(cpt_epargne.get(0).num_nip);
         if(!liste_client.isEmpty())System.out.println(liste_client.get(1).admin);
+        for(int i = 0 ;i<cpt_epargne.size();i++) {
+            System.out.println(cpt_epargne.get(i).solde_dollar);
+        }
+    }
+    public void paimentDesInterets(View view){
+        for(int i = 0 ;i<cpt_epargne.size();i++) {
+            cpt_epargne.get(i).paiementInterets();
+            System.out.println(cpt_epargne.get(i).solde_dollar);
+
+        }
+
     }
 }
