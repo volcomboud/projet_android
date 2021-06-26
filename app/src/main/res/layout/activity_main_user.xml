@@ -36,6 +36,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay_num1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -45,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="OnClickBtn0"
+            android:duplicateParentState="true"
             android:text="0"></Button>
 
         <Button
@@ -54,6 +56,7 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn1"
+            android:duplicateParentState="true"
             android:text="1"></Button>
 
         <Button
@@ -63,6 +66,7 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn2"
+            android:duplicateParentState="true"
             android:text="2"></Button>
 
         <Button
@@ -72,10 +76,12 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn3"
+            android:duplicateParentState="true"
             android:text="3"></Button>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay_num2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -85,6 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="OnClickBtn4"
+            android:duplicateParentState="true"
             android:text="4"></Button>
 
         <Button
@@ -94,6 +101,7 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn5"
+            android:duplicateParentState="true"
             android:text="5"></Button>
 
         <Button
@@ -103,6 +111,7 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn6"
+            android:duplicateParentState="true"
             android:text="6"></Button>
 
         <Button
@@ -112,10 +121,12 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn7"
+            android:duplicateParentState="true"
             android:text="7"></Button>
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lay_num3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -125,6 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="OnClickBtn8"
+            android:duplicateParentState="true"
             android:text="8"></Button>
 
         <Button
@@ -134,6 +146,7 @@
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:onClick="OnClickBtn9"
+            android:duplicateParentState="true"
             android:text="9"></Button>
 
         <Button
@@ -193,6 +206,7 @@
                 android:text="Retrait"></RadioButton>
 
             <RadioButton
+                android:id="@+id/rbtn_virement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -201,6 +215,7 @@
         </RadioGroup>
 
         <RadioGroup
+            android:id="@+id/radioG_compte"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -233,10 +248,12 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_etat_compte"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:layout_marginRight="2.5dp"
             android:layout_weight="1"
+            android:onClick="OnClickEtatDesComptes"
             android:text="ÉTAT DES COMPTES"></Button>
 
         <Button
@@ -246,7 +263,27 @@
             android:layout_gravity="center"
             android:layout_marginLeft="2.5dp"
             android:layout_weight="1"
+            android:onClick="OnClickSoumettre"
             android:text="SOUMETTRE"></Button>
     </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="15dp"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+
+        <TextView
+            android:id="@+id/txt_solde_cheque"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             />
+        <TextView
+            android:id="@+id/txt_solde_epargne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
 </LinearLayout>
