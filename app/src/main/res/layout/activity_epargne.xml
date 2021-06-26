@@ -7,9 +7,8 @@
     tools:context=".cheque_activity">
 
     <ListView
-
         android:id="@+id/liste_epargne"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></ListView>
 
 </LinearLayout>

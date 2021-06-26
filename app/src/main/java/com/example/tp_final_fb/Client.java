@@ -38,6 +38,13 @@ public class Client implements Parcelable {
     public String getUsername(){
         return this.username;
     }
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
     protected boolean getNip(int nip){
 
         if(!this.comptes_client.isEmpty()) {

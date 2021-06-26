@@ -2,4 +2,8 @@
     <string name="app_name">Guichet Automatique ATM</string>
     <string name="num_compte">Le numéro du compte : </string>
     <string name="solde_compte">Le solde du compte :</string>
+
+    <string name="username">Nom d\'Utilisateur : </string>
+    <string name="prenom">Prénom du Client : </string>
+    <string name="nom">Nom du Client : </string>
 </resources>

@@ -11,14 +11,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class AndroidAdapter extends ArrayAdapter<Cheque> {
+public class chequeAdapter extends ArrayAdapter<Cheque> {
     private ArrayList<Cheque> cheque_list;
     private Context context;
 
     private int viewRes;
     private Resources res;
 
-    public AndroidAdapter(Context context,int textViewResourceId,ArrayList<Cheque> cheque){
+    public chequeAdapter(Context context, int textViewResourceId, ArrayList<Cheque> cheque){
         super(context, textViewResourceId, cheque);
         this.cheque_list = cheque;
         this.context = context;

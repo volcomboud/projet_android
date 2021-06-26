@@ -82,7 +82,7 @@ public class main_user extends AppCompatActivity {
             depot();
         }
         else
-            Toast.makeText(this, "NOPe", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Sélectionnez une opération", Toast.LENGTH_LONG).show();
 
 
     }
@@ -276,6 +276,9 @@ public class main_user extends AppCompatActivity {
         decimal=false;
         cheque=false;
         epargne=false;
+        depot=false;
+        virement=false;
+        retrait=false;
         compte_decimal=0;
         affichage.setText(String.valueOf(afficheur));
         ouvrirClavier();
@@ -293,6 +296,8 @@ public class main_user extends AppCompatActivity {
                 cheque=true;
                 epargne=false;
                 depot();
+                String toast="Virement de "+user_dollars+","+user_cents+" de votre compte épargne vers votre compte chèque";
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
             }
         }
         else if (cheque)
@@ -301,30 +306,40 @@ public class main_user extends AppCompatActivity {
                 cheque=false;
                 epargne=true;
                 depot();
+                String toast="Virement de "+user_dollars+","+user_cents+" de votre compte chèque vers votre compte épargne";
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
             }
         else {
-            Toast.makeText(this, "Sélectionner un compte", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Sélectionner un compte", Toast.LENGTH_LONG).show();
         }
         Clear();
     }
     private void depot(){
-       // StringToMoney();
         if(epargne){
             compte_client.get(index_epargne).afficherSolde();
             //System.out.println("Le nombre de dollar avant de partir : "+user_dollars);
             compte_client.get(index_epargne).depot(user_dollars*100, user_cents);
             compte_client.get(index_epargne).afficherSolde();
-            //Clear();
+            String toast="Dépot de "+user_dollars+","+user_cents+" sur votre compte épargne";
+            if(!virement){
+                Clear();
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
+            }
         }
         else if (cheque){
             compte_client.get(index_cheque).afficherSolde();
             //System.out.println("Le nombre de dollar avant de partir : "+user_dollars);
             compte_client.get(index_cheque).depot(user_dollars*100, user_cents);
             compte_client.get(index_cheque).afficherSolde();
-           // Clear();
+            String toast="Dépot de "+user_dollars+","+user_cents+" sur votre compte chèque";
+            if(!virement){
+                Clear();
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
+            }
         }
-        else Toast.makeText(this, "Sélectionner un compte", Toast.LENGTH_SHORT).show();
-        if(!virement)Clear();
+        else
+            Toast.makeText(getApplicationContext(),"Sélectionner un compte", Toast.LENGTH_LONG).show();
+
     }
     private void retrait(){
       //  StringToMoney();
@@ -333,18 +348,25 @@ public class main_user extends AppCompatActivity {
             //System.out.println("Le nombre de dollar avant de partir : "+user_dollars);
             compte_client.get(index_epargne).retrait(user_dollars*100, user_cents);
             compte_client.get(index_epargne).afficherSolde();
-          //  Clear();
+            String toast="Retrait de "+user_dollars+","+user_cents+" sur votre compte épargne";
+            if(!virement){
+                Clear();
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
+            }
         }
         else if (cheque){
             compte_client.get(index_cheque).afficherSolde();
             //System.out.println("Le nombre de dollar avant de partir : "+user_dollars);
             compte_client.get(index_cheque).retrait(user_dollars*100, user_cents);
             compte_client.get(index_cheque).afficherSolde();
-          //  Clear();
+            String toast="Dépot de "+user_dollars+","+user_cents+" sur votre compte chèque";
+            if(!virement){
+                Clear();
+                Toast.makeText(getApplicationContext(), toast, Toast.LENGTH_LONG).show();
+            }
         }
         else
-             Toast.makeText(getBaseContext(), "Sélectionner un compte", Toast.LENGTH_SHORT).show();
-        if(!virement)Clear();
+        Toast.makeText(getApplicationContext(),"Sélectionner un compte", Toast.LENGTH_LONG).show();
     }
     private void StringToMoney(){
         user_cents=0;
@@ -354,8 +376,7 @@ public class main_user extends AppCompatActivity {
             if(!dollars.equals("")) user_dollars=Integer.parseInt(dollars);
         }
         else
-            Toast.makeText(this, "Utiliser le clavier pour entrer une valeur", Toast.LENGTH_SHORT).show();
-
+        Toast.makeText(getApplicationContext(),"Utiliser le clavier pour entrer une valeur", Toast.LENGTH_LONG).show();
     }
     private void fermerClavier(){
         LinearLayout lay_1 = (LinearLayout) findViewById(R.id.lay_num1);
@@ -386,16 +407,19 @@ public class main_user extends AppCompatActivity {
         double affi_cheque=0;
         double affi_ep=0;
 
+        if(index_cheque!=-1) {
             TextView cheque = findViewById(R.id.txt_solde_cheque);
-            affi_cheque=compte_client.get(index_cheque).comparateurCents()/100.0;
-            cheque.setText("Solde compte Chèque : " +affi_cheque);
+            affi_cheque = compte_client.get(index_cheque).comparateurCents() / 100.0;
+            cheque.setText("Solde compte Chèque : " + affi_cheque);
             cheque.setTextColor(Color.BLUE);
+        }
 
-
+        if(index_epargne!=-1) {
             TextView epargne = findViewById(R.id.txt_solde_epargne);
-            affi_ep=compte_client.get(index_epargne).comparateurCents()/100.0;
-            epargne.setText("Solde compte Épargne : " +affi_ep);
+            affi_ep = compte_client.get(index_epargne).comparateurCents() / 100.0;
+            epargne.setText("Solde compte Épargne : " + affi_ep);
             epargne.setTextColor(Color.BLUE);
+        }
     }
     private void resetEtatCompte(){
         TextView cheque = findViewById(R.id.txt_solde_cheque);

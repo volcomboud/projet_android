@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -20,19 +21,10 @@ public class Admin extends AppCompatActivity {
         cpt_cheque= getIntent().getExtras().getParcelableArrayList("cheque");
         cpt_epargne=getIntent().getExtras().getParcelableArrayList("epargne");
         liste_client=getIntent().getExtras().getParcelableArrayList("arbre");
-
-        if(!cpt_cheque.isEmpty())System.out.println(cpt_cheque.get(0).num_compte);
-        if(!cpt_epargne.isEmpty())System.out.println(cpt_epargne.get(0).num_nip);
-        if(!liste_client.isEmpty())System.out.println(liste_client.get(1).admin);
-        for(int i = 0 ;i<cpt_epargne.size();i++) {
-            System.out.println(cpt_epargne.get(i).solde_dollar);
-        }
     }
     public void onClickpaimentDesInterets(View view){
-        for(int i = 0 ;i<cpt_epargne.size();i++) {
-            cpt_epargne.get(i).paiementInterets();
-            System.out.println(cpt_epargne.get(i).solde_dollar);
-        }
+        for(int i = 0 ;i<cpt_epargne.size();i++) cpt_epargne.get(i).paiementInterets();
+        Toast.makeText(getApplicationContext(), "Les intérêts on été payé", Toast.LENGTH_LONG).show();
     }
     public void onClickComptesCheques(View view){
         Intent intent = new Intent(this, cheque_activity.class);
