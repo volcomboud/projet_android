@@ -2,6 +2,7 @@ package com.example.tp_final_fb;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -27,12 +28,31 @@ public class Admin extends AppCompatActivity {
             System.out.println(cpt_epargne.get(i).solde_dollar);
         }
     }
-    public void paimentDesInterets(View view){
+    public void onClickpaimentDesInterets(View view){
         for(int i = 0 ;i<cpt_epargne.size();i++) {
             cpt_epargne.get(i).paiementInterets();
             System.out.println(cpt_epargne.get(i).solde_dollar);
-
         }
-
+    }
+    public void onClickComptesCheques(View view){
+        Intent intent = new Intent(this, cheque_activity.class);
+        Bundle passeur= new Bundle();
+        passeur.putParcelableArrayList("cheque",cpt_cheque);
+        intent.putExtras(passeur);
+        startActivity(intent);
+    }
+    public void onClickComptesEpargne(View view){
+        Intent intent = new Intent(this, epargne_activity.class);
+        Bundle passeur= new Bundle();
+        passeur.putParcelableArrayList("epargne",cpt_epargne);
+        intent.putExtras(passeur);
+        startActivity(intent);
+    }
+    public void onClickListeClients(View view){
+        Intent intent = new Intent(this, listeclient_activity.class);
+        Bundle passeur= new Bundle();
+        passeur.putParcelableArrayList("client",liste_client);
+        intent.putExtras(passeur);
+        startActivity(intent);
     }
 }

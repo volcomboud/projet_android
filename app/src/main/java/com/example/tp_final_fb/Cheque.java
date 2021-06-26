@@ -44,4 +44,13 @@ public class Cheque extends Compte {
         dest.writeInt(num_compte);
         dest.writeByte((byte) (type_epargne ? 1 : 0));
     }
+//    public String toString(){
+//        return "Numéro de compte : "+this.num_compte+"\n"+afficheSolde();
+//    }
+//        @Override
+//    public String toString() {
+//      return "Numéro de compte : "+this.num_compte+"\n"+afficheSolde();
+//
+//    }
 }
+

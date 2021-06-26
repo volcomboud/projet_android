@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TP_Final_fb">
-        <activity android:name=".Admin"></activity>
+        <activity android:name=".listeclient_activity"></activity>
+        <activity android:name=".epargne_activity" />
+        <activity android:name=".cheque_activity" />
+        <activity android:name=".Admin" />
         <activity android:name=".main_user" />
         <activity android:name=".MainActivity">
             <intent-filter>

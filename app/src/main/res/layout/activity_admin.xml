@@ -23,25 +23,28 @@
             android:id="@+id/btn_paie_interet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="paimentDesInterets"
+            android:onClick="onClickpaimentDesInterets"
             android:text="PAIMENT DES INTÉRÊTS"></Button>
 
         <Button
             android:id="@+id/btn_cpt_cheque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickComptesCheques"
             android:text="COMPTES CHÈQUES"></Button>
 
         <Button
             android:id="@+id/btn_cpt_saving"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickComptesEpargne"
             android:text="COMPTES ÉPARGNES"></Button>
 
         <Button
             android:id="@+id/btn_liste_client"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onClickListeClients"
             android:text="LISTE DES CLIENTS"></Button>
     </LinearLayout>
 

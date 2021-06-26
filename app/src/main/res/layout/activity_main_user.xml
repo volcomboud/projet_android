@@ -45,8 +45,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="OnClickBtn0"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn0"
             android:text="0"></Button>
 
         <Button
@@ -55,8 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn1"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn1"
             android:text="1"></Button>
 
         <Button
@@ -65,8 +65,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn2"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn2"
             android:text="2"></Button>
 
         <Button
@@ -75,8 +75,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn3"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn3"
             android:text="3"></Button>
     </LinearLayout>
 
@@ -90,8 +90,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="OnClickBtn4"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn4"
             android:text="4"></Button>
 
         <Button
@@ -100,8 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn5"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn5"
             android:text="5"></Button>
 
         <Button
@@ -110,8 +110,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn6"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn6"
             android:text="6"></Button>
 
         <Button
@@ -120,8 +120,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn7"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn7"
             android:text="7"></Button>
     </LinearLayout>
 
@@ -135,8 +135,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="OnClickBtn8"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn8"
             android:text="8"></Button>
 
         <Button
@@ -145,8 +145,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="1"
-            android:onClick="OnClickBtn9"
             android:duplicateParentState="true"
+            android:onClick="OnClickBtn9"
             android:text="9"></Button>
 
         <Button
@@ -266,9 +266,11 @@
             android:onClick="OnClickSoumettre"
             android:text="SOUMETTRE"></Button>
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="15dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"></LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -278,12 +280,11 @@
         <TextView
             android:id="@+id/txt_solde_cheque"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-             />
+            android:layout_height="wrap_content" />
+
         <TextView
             android:id="@+id/txt_solde_epargne"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </LinearLayout>
