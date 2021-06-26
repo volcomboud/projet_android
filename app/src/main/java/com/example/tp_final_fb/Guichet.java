@@ -25,10 +25,20 @@ public class Guichet {
        }
         return false;
     }
+    protected ArrayList<Client> passeClient(){
+        ArrayList<Client> tampon= new ArrayList<Client>(this.arbre_client.values());
+        return tampon;
+    }
     protected ArrayList<Compte> passeCompte(String username, int nip){
         ArrayList<Compte> passeur=new ArrayList<Compte>();
         passeur= Objects.requireNonNull(this.arbre_client.get(username)).comptes_client;
         return passeur;
+    }
+    protected ArrayList<Cheque> passeComptesChk(){
+       return this.cpt_cheque;
+    }
+    protected ArrayList<Epargne> passeComptesEp(){
+        return this.cpt_epargne;
     }
    protected void ajouterClient(Client client){
         this.arbre_client.put(client.getUsername(), client);

@@ -1,11 +1,14 @@
 package com.example.tp_final_fb;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class Client {
-    private String nom;
-    private String prenom;
-    private String username;
+public class Client implements Parcelable {
+    private final String nom;
+    private final String prenom;
+    private final String username;
     protected ArrayList<Compte> comptes_client=new ArrayList<Compte>();
     protected boolean admin;
 
@@ -49,4 +52,34 @@ public class Client {
     protected ArrayList<Compte> getComptes(){
         return this.comptes_client;
     }
+
+    protected Client(Parcel in) {
+        nom = in.readString();
+        prenom = in.readString();
+        username = in.readString();
+        admin= in.readByte() != 0;
+    }
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nom);
+        dest.writeString(prenom);
+        dest.writeString(username);
+        dest.writeByte((byte) (admin ? 1 : 0));
+    }
+    public static final Creator<Client> CREATOR = new Creator<Client>() {
+        @Override
+        public Client createFromParcel(Parcel in) {
+            return new Client(in);
+        }
+
+        @Override
+        public Client[] newArray(int size) {
+            return new Client[size];
+        }
+    };
 }

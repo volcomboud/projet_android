@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             if (database.banque.validerUtilisateur(username, nip)) {
                 if (database.banque.adminCred(username)) {
                     Intent intent = new Intent(this, Admin.class);
+                    Bundle passeur= new Bundle();
+                    ArrayList<Cheque> passe_chk=database.banque.passeComptesChk();
+                    ArrayList<Epargne> passe_ep=database.banque.passeComptesEp();
+                    passeur.putParcelableArrayList("cheque",passe_chk);
+                    passeur.putParcelableArrayList("epargne",passe_ep);
+                    passeur.putParcelableArrayList("arbre",database.banque.passeClient());
+
+                    intent.putExtras(passeur);
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(this, main_user.class);
