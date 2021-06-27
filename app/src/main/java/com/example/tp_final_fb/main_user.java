@@ -69,6 +69,7 @@ public class main_user extends AppCompatActivity {
     }
     public void OnClickSoumettre(View view){
         resetEtatCompte();
+        if(cents.equals(""))cents="0";
         if(virement){
             StringToMoney();
             virements();
@@ -255,6 +256,7 @@ public class main_user extends AppCompatActivity {
         affichage.setText(String.valueOf(afficheur));
     }
     public void OnClickBtnPoint(View view){
+        if(dollars.equals(""))dollars="0";
         TextView affichage = findViewById(R.id.txtb_aff_montant);
         afficheur+=".";
         decimal=true;

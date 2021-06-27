@@ -13,6 +13,7 @@ public class Database {
     Epargne ep_lena=new Epargne(1,15,75);
     Epargne ep_mario=new Epargne(1,32,43);
 
+
     Client mario=new Client("Mario","Brosse","m",false,ep_mario);
     Client admin=new Client("Pierre-Karl","Pédal'eau","admin",true,c_admin);
     Client boud= new Client("Francis","Boud","volcomboud",false,chk_boud);
@@ -35,6 +36,5 @@ public class Database {
         this.banque.ajouterCheque(chk_lena);
         this.banque.ajouterEpargne(ep_lena);
         this.banque.ajouterEpargne(ep_mario);
-
     }
 }

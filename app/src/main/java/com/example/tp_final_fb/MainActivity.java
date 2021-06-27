@@ -54,13 +54,15 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtras(passeur);
                     startActivity(intent);
                 }
-            } else
+            } else {
                 Toast.makeText(this, "ACCÈS REFUSÉ", Toast.LENGTH_SHORT).show();
+                compteur++;
+            }
 
         }
         else
             Toast.makeText(this, "Veuillez réessayer plus tard", Toast.LENGTH_SHORT).show();
-        compteur++;
+
     }
 
 }

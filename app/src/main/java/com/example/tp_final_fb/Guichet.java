@@ -9,9 +9,9 @@ import java.util.TreeMap;
 
 public class Guichet {
 
-    private NavigableMap<String, Client >  arbre_client= new TreeMap<String, Client>();
-    private ArrayList<Cheque> cpt_cheque=new ArrayList<Cheque>();
-    private ArrayList<Epargne> cpt_epargne=new ArrayList<Epargne>();
+    private final NavigableMap<String, Client >  arbre_client= new TreeMap<String, Client>();
+    private final ArrayList<Cheque> cpt_cheque=new ArrayList<Cheque>();
+    private final ArrayList<Epargne> cpt_epargne=new ArrayList<Epargne>();
 
     Guichet(){
 
